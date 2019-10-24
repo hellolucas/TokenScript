@@ -1,0 +1,57 @@
+<script type="text/javascript"><![CDATA[
+    class Token {
+
+        constructor(tokenInstance) {
+            this.props = tokenInstance;
+            this.props.underlyingToken = this.props.name.replace("c", "");
+        }
+
+        mustEnableFirstPage(APR, cTokenBalance, tokenBalance) {
+            window.onConfirm = function() { window.close() };
+            return`
+            <div class="ui container">
+                <div class="ui segment">
+                    <span><bold><h3>Logged in</h3></bold></span>
+                </div>
+            </div>
+            `
+        }
+    
+        render() {
+
+            try {
+                if(this.props.allowance <= 0) {
+                    return this.mustEnableFirstPage();
+                }
+            } catch {
+                //this would hit if it is cETH which does not have this requirement and so does not have the allowance attribute
+            }
+            window.onConfirm = function() { window.close() };
+            return`
+            <div class="ui container">
+              <div class="ui segment">
+                <span><bold><h3>Login to Tokenscript</h3></bold></span>
+                <h3 id="message"></h3>
+                    <div id="inputBox">
+                        <bold><h3>Username</h3></bold>
+                            <span><input id="username" type="string"></span>
+                        </div>
+                        <div id="inputBox">
+                            <bold><h3>Password</h3></bold>
+                            <span><input id="password" type="password"></span>
+                        </div>
+              </div>
+            </div>
+
+    `;
+        }
+    }
+    
+    web3.tokens.dataChanged = (oldTokens, updatedTokens) => {
+    const currentTokenInstance = web3.tokens.data.currentInstance;
+    document.getElementById('root').innerHTML = new Token(currentTokenInstance).render();
+};
+    
+    ]]></script>
+    <div id="root"></div>
+    
