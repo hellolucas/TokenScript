@@ -5,12 +5,12 @@ Tokenscript makes SmartTokens which allow extra functionality added to the token
 TLDR: Tokenscript is like the front-end for tokens. 
 
 # Contents - Feel free to jump straight into it!
-## 1. [Setting up for Tokenscript Development](#setting-up-for-tokenscript-development).
-## 2. [Tutorial: How to Create a Login Screen on Tokenscript.](#tutorial-how-to-create-a-login-screen-on-tokenscript)
-## 3. [Signing the TokenScript.](#signing-tokenscript)
-## 4. [Publishing your Tokenscript.](#publishing-your-tokenscript)
+## 1. Setting up for Tokenscript Development
+## 2. Tutorial: How to Create a Login Screen on Tokenscript.
+## 3. Signing the TokenScript.
+## 4. Publishing your Tokenscript.
 
-## Setting up for Tokenscript Development.(#setting-up-for-tokenscript-development) 
+## Setting up for Tokenscript Development.
 Before jumping into the tutorial, you can easily set up your developer environment with these simple steps. 
 
 1. Fork and clone this repository. 
@@ -23,7 +23,7 @@ Firstly, we'd like to clone or fork the Tokenscript repository so that we have t
 - On Mac: `brew install xmlsectool`
 - Linux/Windows: [Install Here](https://wiki.shibboleth.net/confluence/display/XSTJ2/xmlsectool+V2+Home#xmlsectoolV2Home-ObtainingandUsingxmlsectool)
 
-## Tutorial: How to Create a Login Screen on Tokenscript.(#tutorial-how-to-create-a-login-screen-on-tokenscript)
+## Tutorial: How to Create a Login Screen on Tokenscript.
 1. Navigate to `/Tokenscript/examples/erc20/DeFi` folder. 
 
 2. Create a new directory called `Login`. This is where we will be building and making our Tokenscript files.
@@ -107,9 +107,9 @@ This `login.xml` file will be the "skeleton" of your project where we fill in th
 5. As you can see our xml file now has data and if you read through it I have placed some comments that explain parts of the code. Replace the following variables
 with these, or make your own: 
 
-`ENTER A TITLE HERE` => `Login`
-`CONTRACT_NAME` => `login`
-`NAME_OF_BUTTON` => `Login`
+- `ENTER A TITLE HERE` => `Login`
+- `CONTRACT_NAME` => `login`
+- `NAME_OF_BUTTON` => `Login`
 
 6. Once you're happy with your `login.xml` file, you're ready to start coding the view! Create a new file called `login.en.shtml`. This will be our 'front-end' interface that talks to the `login.xml` for data that you have just created. Head over to that file and copy and paste the code: 
 
@@ -179,7 +179,7 @@ So this code renders html using javascript. You're able to use basic html in the
 
 One thing to note is that This code doesn't handle smart contract logic. This page is the view, which handles styling and what is being displayed in the TokenScript. 
 
-## Signing the TokenScript.(#signing-tokenscript)
+## Signing the TokenScript.
 
 7. Drag the `MakeFile` into your directory from the `/defi` folder.
 
@@ -198,12 +198,9 @@ After cloning the source code you can run it with either the emulator or your ow
 If you are using your real device, simply airdrop the canonicalized.xml file or drop the xml file with its three layout files `(shared.css, enter.en.shtml & token.en.shtml).`
 
 #### Debugging on Android
-As with iOS you can either use your own device or the emulator. 
-- Run on Android Studio/Intellij and use your device or the emulator. 
-- In the AlphaWallet settings choose 'enable dev override', allow the app access to file structure then drag and drop the file into the AlphaWallet directory at root or upload to sdcard/AlphaWallet using the Device File Explorer. 
-- If the 'enable dev override' is not chosen inside the app, it will not be able to pick up files in this directory.
+As with iOS you can either use your own device or the emulator. Run on Android Studio/Intellij and use your device or the emulator. In the AlphaWallet settings choose 'enable dev override', allow the app access to file structure then drag and drop the file into the AlphaWallet directory at root or upload to sdcard/AlphaWallet using the Device File Explorer. If the 'enable dev override' is not chosen inside the app, it will not be able to pick up files in this directory.
 
-## Publishing your Tokenscript (#publishing-your-tokenscript)
+## Publishing your Tokenscript
 To test your current .tsml file, you can simply drop in onto your device with the instructions provided by step 3. As of now, we are serving signed tsml files from a server that the device can pull from to load into it's corresponding token card.
 
 If you would like to publish your own tsml file to run on this server, create a PR in [this repo](https://github.com/AlphaWallet/TokenScript-Repo) repo and we will review it.
