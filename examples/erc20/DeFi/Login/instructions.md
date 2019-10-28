@@ -2,50 +2,28 @@
 
 Tokenscript makes SmartTokens which allow extra functionality added to the token, which extends the SmartToken structure and usability. 
 
-Tokenscript is like the front-end for tokens. 
+TLDR: Tokenscript is like the front-end for tokens. 
 
-# Contents.
-1. Setting up for Tokenscript Development.
-2. Tutorial: How to Create a Login Screen on Tokenscript.
-3. Signing the TokenScript.
-4. Publishing your Tokenscript
+# Contents - Feel free to jump straight into it!
+## 1. [Setting up for Tokenscript Development](#setting-up-for-tokenscript-development).
+## 2. [Tutorial: How to Create a Login Screen on Tokenscript.](#tutorial-how-to-create-a-login-screen-on-tokenscript)
+## 3. [Signing the TokenScript.](#signing-tokenscript)
+## 4. [Publishing your Tokenscript.](#publishing-your-tokenscript)
 
-## Setting up for Tokenscript Development. 
+## Setting up for Tokenscript Development.(#setting-up-for-tokenscript-development) 
 Before jumping into the tutorial, you can easily set up your developer environment with these simple steps. 
 
 1. Fork and clone this repository. 
-Firstly, we'd like to clone or fork the Tokenscript repository so that we have the latest source code. There are no dependencies for 
-Tokenscript so you're able to run through the tutorial straight off the bat. 
-
-1a. When you fork and clone the Tokenscript repository, you'll notice our file structure should look like this:
-
-+-- .idea
-+-- doc
-+-- examples
-|   +-- action
-|   +-- devcon5-nft
-|   +-- EntryToken
-|   +-- erc20
-|       +-- AlphaWallet-Discovery-Token
-|       +-- DAI
-|       +-- DeFi (We are going to be working in here!)
-|       +-- WETH
-|   +-- fifa
-+-- resources
-+-- schema
-+-- tutorial
--- .gitignore
--- README.md
--- TokenScript.iml 
+Firstly, we'd like to clone or fork the Tokenscript repository so that we have the latest source code. 
 
 2. Install IntelliJ or VS Code. 
 - IntelliJ is the recommended IDE for Tokenscript as it highlights dependencies in the .xml files and schema.
 
 3. Installing `xmlsectool` for signing the tokenscript.
 - On Mac: `brew install xmlsectool`
-- Linux/Windows: (Install here)[https://wiki.shibboleth.net/confluence/display/XSTJ2/xmlsectool+V2+Home#xmlsectoolV2Home-ObtainingandUsingxmlsectool]
+- Linux/Windows: [Install Here](https://wiki.shibboleth.net/confluence/display/XSTJ2/xmlsectool+V2+Home#xmlsectoolV2Home-ObtainingandUsingxmlsectool)
 
-## Tutorial: How to Create a Login Screen on Tokenscript.
+## Tutorial: How to Create a Login Screen on Tokenscript.(#tutorial-how-to-create-a-login-screen-on-tokenscript)
 1. Navigate to `/Tokenscript/examples/erc20/DeFi` folder. 
 
 2. Create a new directory called `Login`. This is where we will be building and making our Tokenscript files.
@@ -201,7 +179,7 @@ So this code renders html using javascript. You're able to use basic html in the
 
 One thing to note is that This code doesn't handle smart contract logic. This page is the view, which handles styling and what is being displayed in the TokenScript. 
 
-## Signing the TokenScript.
+## Signing the TokenScript.(#signing-tokenscript)
 
 7. Drag the `MakeFile` into your directory from the `/defi` folder.
 
@@ -225,8 +203,8 @@ As with iOS you can either use your own device or the emulator.
 - In the AlphaWallet settings choose 'enable dev override', allow the app access to file structure then drag and drop the file into the AlphaWallet directory at root or upload to sdcard/AlphaWallet using the Device File Explorer. 
 - If the 'enable dev override' is not chosen inside the app, it will not be able to pick up files in this directory.
 
-## Publishing your Tokenscript
+## Publishing your Tokenscript (#publishing-your-tokenscript)
 To test your current .tsml file, you can simply drop in onto your device with the instructions provided by step 3. As of now, we are serving signed tsml files from a server that the device can pull from to load into it's corresponding token card.
 
-If you would like to publish your own tsml file to run on this server, create a PR in (this)[https://github.com/AlphaWallet/TokenScript-Repo] repo and we will review it.
+If you would like to publish your own tsml file to run on this server, create a PR in [this repo](https://github.com/AlphaWallet/TokenScript-Repo) repo and we will review it.
 
